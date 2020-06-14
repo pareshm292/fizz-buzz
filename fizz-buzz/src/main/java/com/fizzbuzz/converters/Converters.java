@@ -1,6 +1,7 @@
 package com.fizzbuzz.converters;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Converters {
@@ -8,7 +9,12 @@ public class Converters {
 	private List<Converter> converters ;
 	
 	public Converters() {
-		this.converters = new ArrayList<>();
+		this.converters = new ArrayList<Converter>(Arrays.asList(
+				new FizzBuzzConverter(),
+				new FizzConverter(),
+				new BuzzConverter()
+				));
+		
 	}
 	
 	public String convertInput(Integer number) {
