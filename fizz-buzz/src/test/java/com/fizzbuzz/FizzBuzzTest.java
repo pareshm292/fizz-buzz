@@ -69,5 +69,32 @@ public class FizzBuzzTest {
 		assertEquals("FizzBuzz" , output2);
 		
 	}
+	
+	
+	@Test
+	public void convert_numberNotDivisibleBy3Or5_shouldReturnItself() {
+		
+		String output = converters.convertInput(11);
+		
+		assertEquals("11" , output);
+		
+		String output2 = converters.convertInput(44);
+		
+		assertEquals("44" , output2);
+		
+	}
+	
+	/*
+	 * No Assertions in this test, it is just to print output..
+	 */
+	@Test
+	public void printOutputFor1To100() {
+		
+		for(int i = 1 ; i <= 100 ; i++) {
+			System.out.println(converters.convertInput(i));
+		}
+		
+		
+	}
 
 }

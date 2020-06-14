@@ -12,7 +12,8 @@ public class Converters {
 		this.converters = new ArrayList<Converter>(Arrays.asList(
 				new FizzBuzzConverter(),
 				new FizzConverter(),
-				new BuzzConverter()
+				new BuzzConverter(),
+				new DefaultConverter()
 				));
 		
 	}
