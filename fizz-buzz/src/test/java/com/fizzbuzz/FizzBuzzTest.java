@@ -28,73 +28,87 @@ public class FizzBuzzTest {
 			System.out.println("TestCase Passed, as Converter implementations were found.");
 		}
 	}
-	
-	
+
+
 	@Test
 	public void convert_numberDivisibleBy3_shouldReturnFizz() {
-		
+
 		String output = converters.convertInput(3);
-		
+
 		assertEquals("Fizz" , output);
-		
+
 		String output2 = converters.convertInput(21);
-		
+
 		assertEquals("Fizz" , output2);
-		
+
 	}
-	
+
 	@Test
 	public void convert_numberDivisibleBy5_shouldReturnBuzz() {
-		
+
 		String output = converters.convertInput(5);
-		
+
 		assertEquals("Buzz" , output);
-		
+
 		String output2 = converters.convertInput(20);
-		
+
 		assertEquals("Buzz" , output2);
-		
+
 	}
-	
-	
+
+
 	@Test
 	public void convert_numberDivisibleBy3And5_shouldReturnFizzBuzz() {
-		
+
 		String output = converters.convertInput(15);
-		
+
 		assertEquals("FizzBuzz" , output);
-		
+
 		String output2 = converters.convertInput(45);
-		
+
 		assertEquals("FizzBuzz" , output2);
-		
+
 	}
-	
-	
+
+
 	@Test
 	public void convert_numberNotDivisibleBy3Or5_shouldReturnItself() {
-		
+
 		String output = converters.convertInput(11);
-		
+
 		assertEquals("11" , output);
-		
+
 		String output2 = converters.convertInput(44);
-		
+
 		assertEquals("44" , output2);
-		
+
 	}
-	
+
+	@Test(expected = IllegalArgumentException.class)
+	public void convert_numberLessThan1_shouldThrowError() {
+
+		String output = converters.convertInput(-5);
+
+		assertEquals("-5" , output);
+
+		String output2 = converters.convertInput(-88);
+
+		assertEquals("44" , output2);
+
+
+	}
+
 	/*
 	 * No Assertions in this test, it is just to print output..
 	 */
 	@Test
 	public void printOutputFor1To100() {
-		
+
 		for(int i = 1 ; i <= 100 ; i++) {
 			System.out.println(converters.convertInput(i));
 		}
-		
-		
+
+
 	}
 
 }

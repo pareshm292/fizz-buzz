@@ -20,6 +20,10 @@ public class Converters {
 	
 	public String convertInput(Integer number) {
 		
+		if(number < 1) {
+			throw new IllegalArgumentException("Number cannot be less than 1.");
+		}
+		
 		for (Converter converter : converters) {
 			if(converter.meetsCondition(number)) {
 				return converter.convert(number);
