@@ -20,6 +20,9 @@ public class FizzBuzzTest {
 
 	@Test
 	public void checkForInputWithNoConverters() {
+		
+		System.out.println("***** Sanity Check TEST for no converters present *****");
+		
 		if(converters.getConverters().size() == 0) {
 			String output = converters.convertInput(new Random().nextInt(99) + 1);
 			assertEquals("" , output);
@@ -95,6 +98,32 @@ public class FizzBuzzTest {
 
 		assertEquals("44" , output2);
 
+	}
+	
+	@Test
+	public void convert_numberNotDivisibleBy3ButContains3_shouldReturnFizz() {
+
+		String output = converters.convertInput(23);
+
+		assertEquals("Fizz" , output);
+
+		String output2 = converters.convertInput(43);
+
+		assertEquals("Fizz" , output2);
+
+	}
+	
+	
+	@Test
+	public void convert_numberNotDivisibleBy5ButContains5_shouldReturnBuzz() {
+
+		String output = converters.convertInput(52);
+
+		assertEquals("Buzz" , output);
+
+		String output2 = converters.convertInput(56);
+
+		assertEquals("Buzz" , output2);
 
 	}
 
@@ -104,11 +133,13 @@ public class FizzBuzzTest {
 	@Test
 	public void printOutputFor1To100() {
 
+		System.out.println("***** PRINTING OUTPUT FOR 1 - 100 *****");
+		
 		for(int i = 1 ; i <= 100 ; i++) {
 			System.out.println(converters.convertInput(i));
 		}
 
-
+		System.out.println("***** END *****");
 	}
 
 }

@@ -4,10 +4,12 @@ public class FizzConverter implements Converter {
 
 	private String CONVERTED_VALUE = "Fizz";
 	
+	private String THREE = "3";
+	
 	@Override
 	public boolean meetsCondition(Integer number) {
 
-		return number % 3 == 0;
+		return number % 3 == 0 || number.toString().contains(THREE);
 	}
 
 	@Override
